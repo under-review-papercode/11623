@@ -1,8 +1,9 @@
 # SEGA-VQA
 
 
-This repository contains the code for the paper SegMedVQA: Segmentation-Guided Pre-training for Medical Visual
-Under review.
+This repository contains the code for the paper SegMedVQA: Segmentation-Guided Pre-training for Medical Visual Question Answering.
+
+Paper under review.
 
 ## Usage
 
@@ -50,14 +51,6 @@ python main.py --config ./configs/BLIP.Q.yaml  --pretrain --exp_name SEGA --dist
 ### M2I2 + SEGA
 ```
 python main.py --config ./configs/BLIP.Q.yaml  --pretrain --exp_name name --dist_port 5699 --distributed --gpu 0 --pretrain_weights ./M2I2_weights.pth
-```
-
-
-### Zero Shot
-Zero-shot values for the proposed model will be logged during the training on the SynVQA dataset.
-Zero-shot with BLIP base weights can be obtained by running:
-```
-python blip_zeroshot.py
 ```
 
 ### Weights
