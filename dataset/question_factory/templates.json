@@ -1,0 +1,145 @@
+{
+  "synonyms": {
+    "brain": ["the organ you use to think", "the tissue that is related with remembering things"],
+    "heart": ["the organ that could promote blood flow"],
+    "lungs": ["the organ that could be used for breathing"],
+    "stomach": ["the organ which has the effect of digesting food"],
+    "kidneys": [
+        "the organ which has the effect of excreting body waste",
+        "the organ which has the effect of adjusting water and osmotic pressure balance"
+    ],
+    "liver": [
+        "the organ that could be used for detoxicating",
+        "the organ which has the effect of detoxicating"
+    ],
+    "pancreas": ["the organ that could be used for secreting enzymes"],
+    "bladder": [
+        "the organ which has the effect of storing urine",
+        "the organ that could store urine"
+    ]
+  },
+  "simple_sentences": {
+    "single_organ": [
+      "A {modality} image has captured a {organ}.",
+      "The {organ} is visible in this {modality} image.",
+      "This {organ} has been imaged using {modality}.",
+      "Using {modality}, a clear image of the {organ} has been obtained.",
+      "A {modality} scan has revealed the {organ}.",
+      "The {organ} is all visible in this {modality} image.",
+      "This {organ} has been examined using {modality}.",
+      "A {modality} image has been produced, showing the {organ}.",
+      "In this {modality} image, the {organ} is visible.",
+      "{modality} has been used to produce an image of the {organ}."
+    ],
+    "multi_organ": [
+      "A {modality} image has captured {organs}.",
+      "{organs} are visible in this {modality} image of the {organ}.",
+      "This {organ} has been imaged using {modality}, showing {organs} as well.",
+      "The {organ} is depicted in this {modality} image, alongside {organs}.",
+      "A {modality} scan has revealed {organs}.",
+      "{organs} are all visible in this {modality} image of the {organ}.",
+      "Using {modality}, a clear image of the {organ}, as well as {organs}, has been obtained.",
+      "This {organ} has been examined using {modality}, and {organs} can also be seen.",
+      "A {modality} image has been produced, showing the {organ} and also {organs}.",
+      "In this {modality} image, the {organ} is visible, along with {organs}."
+    ]
+  },
+  "QUESTIONS": {
+    "ORGANS": {
+      "open": [
+         "Can you name the organ captured by this image among {organs}?",
+         "What organ is this image of among {organs}?",
+         "What organ system is shown in the above image among {organs}?",
+         "Which organ system is shown in the image among {organs}?",
+         "What organ system is pictured among {organs}?",
+         "What is the organ system in this image among {organs}?"
+      ],
+      "close": [
+         "is {organ} displayed in this scan",
+         "Is this a study of the {organ}?",
+         "Does this image display the contents of the {organ}?",
+         "Is this the {organ}?",
+         "is the {organ} shown?",
+         "Is this an image of the {organ}?",
+         "Is this image of the {organ}?"
+      ]
+    },
+    "POSITION": {
+      "lesion": {
+        "within": [
+            "Where is the largest mass located in the {organ}?",
+            "Where in the {organ} is the lesion?"
+        ],
+        "whole": [
+          "What is the location of the abnormality in the image?",
+          "Where is the abnormality in the image?",
+          "Where is/are the lesion located in the image?",
+          "Where is/are the abnormality located in the image?",
+          "What area is abnormal in the image?",
+          "The lesion is located where in this image?",
+          "What is the location of the mass in the image?"
+        ]
+      }
+    },
+    "PLANE": {
+      "close": [
+        "Is this an {plane} image?",
+        "Is this image in the {plane}?",
+        "Is this a {plane} plane image?",
+        "Is this a {plane} view of the {organ}?"
+      ],
+      "open":[
+        "What plane is this image?",
+        "What plane are we in?",
+        "What cut of the {organ} is this image taken?",
+        "In what plane is this image taken?"
+      ]
+    },
+    "COUNT": {
+      "close": [
+        "Are there {number} of {abnormality} near the {organ}?",
+        "Are there {number} {abnormality} shown in this image?"
+      ],
+      "open":[
+        "How many lesions are present/visualized in the image?",
+        "How many masses are there?",
+        "How many masses are present/visualized in the image?",
+        "How many lesions are present in the image?",
+        "How many {organ} lesions are present/visualized in the image?"
+      ]
+    },
+    "ABN": {
+      "close":
+      {
+        "is_good": [
+          "Are the findings normal?",
+          "Is this image normal?",
+          "is the {organ} normal appearing?",
+          "Are the findings normal?"
+        ],
+        "is_bad": [
+          "Anything abnormal in this image?",
+          "Are there any abnormalities in the {organ}?",
+          "Is the {organ} abnormal?"
+        ]
+      },
+      "open":[
+        "What abnormality is seen in this image?",
+        "What is abnormal about the image?",
+        "What is the abnormality?",
+        "what is the pathology'?"
+      ]
+    },
+    "MODALITY": {
+      "close": [
+        "Is this a {modality} image?",
+        "Is this a {modality} scan?",
+        "Is this a {modality} of the {area}?"
+      ],
+      "open":[
+        "What was this image taken with?",
+        "What type of image is this?"
+      ]
+    }
+  }
+}

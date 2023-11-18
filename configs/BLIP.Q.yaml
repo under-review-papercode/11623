@@ -1,0 +1,94 @@
+########################
+# TRAINING CONFIGURATION
+model_name: "BLIP" 
+image_res: 384  # or 384
+mae:
+  use: false
+  method: organ # organ, random, threshold
+
+#scheduler:
+#    sched: cosine
+#    min_lr: 3e-4
+#    warmup_lr: 1e-6
+#    decay_rate: 0.9
+#    warmup_epochs: 20
+#    warmup_steps: 3000
+#    cooldown_epochs: 0
+
+accumulator:
+    use: False
+    steps: 1024
+
+# BLIP basic configuration
+vit: 'base'
+vit_grad_ckpt: False
+vit_ckpt_layer: 0
+queue_size: 57600
+alpha: 0.4
+
+#############################
+# PRETRAINING SPECIFIC CONFIG
+pretrain:
+    optimizer:
+        opt: adamW
+        lr: 0.0001
+        weight_decay: 0.02
+
+    weighted_sampling: True
+
+    scheduler:
+        sched: cosine
+        lr: 0.0001
+        epochs: 20
+        min_lr: 0.00001
+        decay_rate: 2
+        warmup_lr: 0.00001
+        warmup_epochs: 1
+        cooldown_epochs: 0
+
+    datasets:
+        vqa_pretrain:
+            train_file: [
+                'ANONYMIZED',
+            ]
+            image_root: 'ANONYMIZED'
+    batch_size: 64
+
+
+############################
+# FINETUNING SPECIFIC CONFIG
+vqa:
+    optimizer:
+        opt: adamW
+        lr: 0.00003
+        weight_decay: 0.05
+
+    scheduler:
+        sched: cosine
+        lr: 0.00002
+        epochs: 90
+        min_lr: 0.000001
+        decay_rate: 1
+        warmup_lr: 0.00001
+        warmup_epochs: 4
+        cooldown_epochs: 0
+
+    weighted_sampling: False
+
+    datasets:
+      slake:
+        train_file: [ '/ANONYMIZED/cache/SLAKE/en/train.json',
+                      '/ANONYMIZED/cache/SLAKE/en/validate.json']
+        vqa_root: 'ANONYMIZED/vqa-slake/imgs/'
+        test_file: [ '/ANONYMIZED/cache/SLAKE/en/test.json' ]
+      rad:
+        train_file: [ 'ANONYMIZED/vqa-rad/trainset.json' ]
+        test_file: [ 'ANONYMIZED/vqa-rad/testset.json' ]
+        vqa_root: 'ANONYMIZED/vqa-rad/VQA_RAD_Image_Folder'
+      ovqa:
+        train_file: [ 'ANONYMIZED/OVQA/trainset.json',
+                      'ANONYMIZED/OVQA/valset.json']
+        test_file: [ 'ANONYMIZED/OVQA/testset.json' ]
+        vqa_root: 'ANONYMIZED/OVQA/img'
+    
+    batch_size: 16
